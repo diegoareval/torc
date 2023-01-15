@@ -1,5 +1,4 @@
 const test = require('tape');
-const Product = require('../src/Product');
 const Cart = require('../src/Cart');
 
 test('Create empty Cart', function(t){
