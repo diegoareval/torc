@@ -62,8 +62,21 @@ const input3 = [
   },
 ]
 
+const allData = [
+  {
+    data: input1
+  },
+  {
+    data: input2
+  },
+  {
+    data: input3
+  }
+]
+
 module.exports = {
   input1,
   input2,
   input3,
+  allData
 }
