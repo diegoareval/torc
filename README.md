@@ -9,5 +9,5 @@ npm run test
 # Run project
 1. run project
 ```
-node src/index
+npm start
 ```

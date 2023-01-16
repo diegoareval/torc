@@ -1,5 +1,5 @@
-'use strict';
-const ProductHandler = require('./ProductHandler');
+'use strict'
+const ProductHandler = require('./ProductHandler')
 
 /**
  *
@@ -10,85 +10,83 @@ const ProductHandler = require('./ProductHandler');
  * @constructor
  */
 
-function Product(properties){
-
-  if(!properties){
-    throw new Error('Product cannot be empty');
+function Product(properties) {
+  if (!properties) {
+    throw new Error('Product cannot be empty')
   }
 
-  if(properties.price && isNaN(Number(properties.price))){
-    throw new Error('Product price should be a number');
+  if (properties.price && isNaN(Number(properties.price))) {
+    throw new Error('Product price should be a number')
   }
 
-  this.name     = properties.name || '';
-  this.price    = Number(properties.price) || 0;
-  this.type     = properties.type || 'other';
-
+  this.name = properties.name || ''
+  this.price = Number(properties.price) || 0
+  this.type = properties.type || 'other'
 }
 
 /**
  * Get name of product
  */
-Product.prototype.getName = function(){
-  return this.name;
-};
+Product.prototype.getName = function () {
+  return this.name
+}
 
 /**
  * Set name of product
  */
-Product.prototype.setName = function(name){
-  this.name = name || '';
-};
+Product.prototype.setName = function (name) {
+  this.name = name || ''
+}
 
 /**
  * Get price without tax
  */
-Product.prototype.getPrice = function(){
-  return this.price;
-};
+Product.prototype.getPrice = function () {
+  return this.price
+}
 
 /**
  * Set price without tax
  */
-Product.prototype.setPrice = function(price){
-
-  if(isNaN(Number(price))){
-    throw new Error('Product price should be a number');
+Product.prototype.setPrice = function (price) {
+  if (isNaN(Number(price))) {
+    throw new Error('Product price should be a number')
   }
 
-  this.price = Number(price) || 0;
-};
+  this.price = Number(price) || 0
+}
 
 /**
  * Get price without tax
+ * @returns {string}
  */
-Product.prototype.getType = function(){
-  return this.type;
-};
+Product.prototype.getType = function () {
+  return this.type
+}
 
 /**
  * Set price without tax
  */
-Product.prototype.setType = function(type){
-  if(!type)
-    throw new Error("Cannot set type as undefined");
+Product.prototype.setType = function (type) {
+  if (!type) throw new Error('Cannot set type as undefined')
 
-  this.type = type;
-};
+  this.type = type
+}
 
 /**
  *
  * @returns {boolean|*}
  */
-Product.prototype.isImported = function(){
-  return this.name.indexOf('imported') >= 0;
-};
+Product.prototype.isImported = function () {
+  return this.name.indexOf('imported') >= 0
+}
 
 /**
  * toString
+ * @returns {string}
  */
-Product.prototype.toString = function(){
-  return this.name + ': ' + ProductHandler.getTaxedPriceOf(this);
-};
+Product.prototype.toString = function () {
+  return this.name + ': ' + ProductHandler.getTaxedPriceOf(this)
+}
 
-module.exports = Product;
+module.exports = Product
