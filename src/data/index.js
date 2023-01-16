@@ -75,8 +75,5 @@ const allData = [
 ]
 
 module.exports = {
-  input1,
-  input2,
-  input3,
   allData
 }
